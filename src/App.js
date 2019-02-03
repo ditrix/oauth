@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import GoogleOAuth from './components/GoogleOAuth'
-
+import FacebookOAuth from './components/FacebookOAuth'
 
 class App extends Component {
   
@@ -11,7 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <GoogleOAuth />
+          <FacebookOAuth />
+        {/*  <GoogleOAuth />*/}
         </header>
       </div>
     );

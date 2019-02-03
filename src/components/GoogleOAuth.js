@@ -15,7 +15,10 @@ export default class GoogleOAuth extends Component {
 	}
 
 	signOut(){
-		this.setState({signed:false})
+		const auth2 = window.gapi.auth2.getAuthInstance() 
+    	auth2.signOut().then(() => {console.log('onSignOut')});
+    	auth2.disconnect()
+    	this.setState({name:null, imgUrl: null, signed: false})
 	}
 	
 	signIn = () => {
@@ -36,8 +39,9 @@ export default class GoogleOAuth extends Component {
 		
 		}
 
-		const onError = () => {
-			console.log('signIn Error')
+		const onError = (code) => {
+			if(code.error !== 'popup_closed_by_user')
+				console.log('signin error')
 		}
 
 		const auth2 = window.gapi.auth2.getAuthInstance() 
@@ -66,13 +70,12 @@ export default class GoogleOAuth extends Component {
   		return(
   			<div className="google-oauth">
   			<div className="google-user-info">
-  			{ this.state.signed ?
+  			{ this.state.signed&&
   				<section> 
   				<img src={this.state.imageUrl} />
   				<span className="google-user-name">{this.state.name}</span>
   				</section>
-  				:
-  				<span>???</span>
+  			
   			}
   			</div>
 
