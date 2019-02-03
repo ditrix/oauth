@@ -1,6 +1,6 @@
-Project for relize OAuth identity of Google, Facebook, Twitter
+Project for relize OAuth identity Google, Fscrbook, Twitter
 
-you have run  project with https (Facebook api used only https) 
+for run  with https (Facebook api used only https) use next commands
 
 set HTTPS=true&&npm start   // for Win
 
@@ -24,7 +24,8 @@ for Linux
      }
 
 
--------- thanks for Create React App team
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
