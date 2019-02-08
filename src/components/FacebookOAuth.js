@@ -80,14 +80,21 @@ handleLogout() {
 	render(){
 		return(
       <section>
-			<h4>todo facebook sign in</h4>
-      <button onClick={this.handleLogin}>login</button>
-      <br />
-      <button onClick={this.handleLogout}>logout</button>
-      <br />
-      <div id="status">{this.state.name}</div>
-      
-      </section>
+	<div>
+  <div className="login-button" onClick={this.state.connected ? this.handleLogout:this.handleLogin}>
+      <div className="login-facebook-icon">f</div>
+      <div className="login-facebook-text">
+          {this.state.connected ? <span>Logout</span>:<span>Log In</span>}
+      </div>
+  </div>
+  <div class="fbUserInfo">{this.state.name}</div>
+  </div>
+  
+  
+
+
+
+        </section>
 		)
 	}
 }
