@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import  './FacebookOAuth.css'
 
 export default class FacebookOAuth extends Component {
 	
@@ -8,6 +9,7 @@ export default class FacebookOAuth extends Component {
       connected: false,
       id: null,
       name: null,
+      imageUrl: null,
     }
     this.handleLogin = this.handleLogin.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
@@ -20,7 +22,8 @@ export default class FacebookOAuth extends Component {
           this.setState({
             name:response.name, 
             id: response.id, 
-            connected: (response.id !== undefined) 
+            connected: (response.id !== undefined),
+            imageUrl: (response.id !== undefined)?`https://graph.facebook.com/${response.id}/picture`:null
           })
       }.bind(this))
    }
@@ -80,14 +83,24 @@ handleLogout() {
 	render(){
 		return(
       <section>
-	<div>
-  <div className="login-button" onClick={this.state.connected ? this.handleLogout:this.handleLogin}>
-      <div className="login-facebook-icon">f</div>
-      <div className="login-facebook-text">
-          {this.state.connected ? <span>Logout</span>:<span>Log In</span>}
-      </div>
-  </div>
-  <div class="fbUserInfo">{this.state.name}</div>
+	<div className="fb-demo">
+ 		
+		{ this.state.connected&&
+  			<div className="fbUserInfo">
+  				<span className="facebook-user-name">{this.state.name}</span>
+  				<img src={this.state.imageUrl} />
+  				
+  			</div>  			
+  		}
+  		
+		  <div className="login-facebook-button" onClick={this.state.connected ? this.handleLogout:this.handleLogin}>
+		      <div className="login-facebook-icon">f</div>
+		      <div className="login-facebook-text">
+		          {this.state.connected ? <span>Logout</span>:<span>Log In</span>}
+		      </div>
+		  </div>
+ 
+
   </div>
   
   
@@ -99,11 +112,3 @@ handleLogout() {
 	}
 }
 
-// https://developers.facebook.com/docs/reference/javascript/FB.logout
-// https://developers.facebook.com/docs/javascript/examples/#login
-// https://developers.facebook.com/docs/facebook-login/web/#example
-// https://developers.facebook.com/docs/graph-api/reference/v2.1/user
-// https://stackoverflow.com/questions/27717555/implement-facebook-api-login-with-reactjs
-// https://developers.facebook.com/docs/javascript/examples/#login
-// https://developers.facebook.com/docs/reference/javascript/FB.getLoginStatus/
-// https://stackoverflow.com/questions/27717555/implement-facebook-api-login-with-reactjs/31859302

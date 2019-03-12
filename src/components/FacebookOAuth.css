@@ -1,0 +1,59 @@
+/* fb styles */
+
+
+
+.fb-demo .facebook-user-name {vertical-align: top;}
+
+.fb-demo .login-facebook-button {
+  margin: 6px;
+  display: table-cell;
+ }
+
+.fbUserInfo {
+  float:left;
+  font-size: 16px;
+  }
+
+.fbUserInfo img {margin: 0px 10px; }
+
+.login-facebook-button {
+  float:left;
+  display: inline-block;
+  cursor: pointer;  
+  background-color: #3b5998;
+  border-radius: 5px;
+} 
+
+.login-facebook-icon {
+  background-color: #fff;
+  color: #3b5998;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  margin: 5px;
+  border-radius: 3px;
+  text-align: center;
+  height: 32px;
+  padding: 0 12px;
+  display: inline-block;
+  float: left;
+}
+
+.login-facebook-text {
+  color: white;
+  font-family: HelveticaNeueW01-55Roma, HelveticaNeueW02-55Roma, HelveticaNeueW10-55Roma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35px;
+  text-align: left;
+  height: 32px;
+  display: inline-block;
+  margin: 3px;
+  padding: 0px 10px;
+  border: 1px solid #3b5998;
+  background-color: #3b5998;
+}
+
+
+
