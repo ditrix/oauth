@@ -1,3 +1,9 @@
+Hello World :)
+
+My name Dmitry Voloshin.
+I'm programs developers with experience more than 15 years. I like coding for fun and prefer study and investigate modern technologies.  Now I study and investigate ReactJS
+
+
 Project for relize OAuth identity of Google, Facebook, Twitter
 
 you have run  project with https (Facebook api used only https) 
