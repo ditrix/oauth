@@ -55,7 +55,7 @@ handleLogout() {
      window.fbAsyncInit = function() {
 
       window.FB.init({
-          appId      : '367873994005468',
+          appId      : 'your api id',
           cookie     : true,
           xfbml      : true,
           version    : 'v3.2'
