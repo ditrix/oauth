@@ -62,7 +62,7 @@ export default class GoogleOAuth extends Component {
       	const onError = (mess) => {console.log('error',mess)}
 
       	window.gapi.load('auth2', function() { // Ready. 
-          window.gapi.auth2.init({ client_id: '390975980382-fp1nn9lo7pbv64t0kdenm9sq4et5n6ok.apps.googleusercontent.com' }).
+          window.gapi.auth2.init({ client_id: 'your-api-key.apps.googleusercontent.com' }).
             then(onInit, onError)
       	})
   	}
