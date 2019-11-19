@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import GoogleOAuth from './components/GoogleOAuth'
 import FacebookOAuth from './components/FacebookOAuth'

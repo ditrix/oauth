@@ -34,7 +34,7 @@ handleLogin() {
          this.statusChangeCallback(response);   
       }.bind(this) // FB.api ...
     )
-    //console.log(this.state)
+
 }
 
 
@@ -46,16 +46,16 @@ handleLogout() {
          this.statusChangeCallback(response);   
       }.bind(this) // FB.api ...
     )
-    //console.log(this.state)
+ 
  }
 
 
   componentDidMount() {
-    console.log('componentDidMount')
+   
      window.fbAsyncInit = function() {
 
       window.FB.init({
-          appId      : 'your api id',
+          appId      : `${process.env.REACT_APP_FID}`,
           cookie     : true,
           xfbml      : true,
           version    : 'v3.2'
@@ -82,7 +82,7 @@ handleLogout() {
 
 	render(){
 		return(
-      <section>
+ 
 	<div className="fb-demo">
  		
 		{ this.state.connected&&
@@ -103,12 +103,7 @@ handleLogout() {
 
   </div>
   
-  
-
-
-
-        </section>
-		)
+ 		)
 	}
 }
 

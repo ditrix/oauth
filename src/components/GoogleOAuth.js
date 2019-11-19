@@ -24,10 +24,7 @@ export default class GoogleOAuth extends Component {
 	
 	signIn = () => {
 
-		
-
 		const onOk = () => {
-			//console.log('signIn Ok')
 			const userProfile	= auth2.currentUser.get().getBasicProfile()
 		
 			this.setState({
@@ -49,12 +46,10 @@ export default class GoogleOAuth extends Component {
 		
 		auth2.signIn({scope:'profile email'}).then(onOk,onError)
 
-    	//this.props.logged(true)
 	}
 
 	componentDidMount(){
-    	console.log('here')
-	    
+   	    
 	    const onInit = (mess) => {
             console.log('init ok')
         }
@@ -62,7 +57,7 @@ export default class GoogleOAuth extends Component {
       	const onError = (mess) => {console.log('error',mess)}
 
       	window.gapi.load('auth2', function() { // Ready. 
-          window.gapi.auth2.init({ client_id: 'your-api-key.apps.googleusercontent.com' }).
+          window.gapi.auth2.init({ client_id: `${process.env.REACT_APP_GID}.apps.googleusercontent.com` }).
             then(onInit, onError)
       	})
   	}
@@ -77,7 +72,6 @@ export default class GoogleOAuth extends Component {
 	  				<img src={this.state.imageUrl} />
 	  				<span className="google-user-name">{this.state.name}</span>
   				</div>
-  			
   			}
 
   			<button type="button" className="google-button" onClick={this.state.signed?this.signOut:this.signIn}>
