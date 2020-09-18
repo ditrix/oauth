@@ -23,7 +23,7 @@ export default class FacebookOAuth extends Component {
             name:response.name, 
             id: response.id, 
             connected: (response.id !== undefined),
-            imageUrl: (response.id !== undefined)?`https://graph.facebook.com/${response.id}/picture`:null
+            // imageUrl: (response.id !== undefined)?`https://graph.facebook.com/${response.id}/picture`:null
           })
       }.bind(this))
    }
@@ -61,13 +61,18 @@ handleLogout() {
           version    : 'v3.2'
       });
       
+
+
+
+
       window.FB.getLoginStatus(
         function(response){
           this.statusChangeCallback(response);
         }.bind(this))
+
+
       }.bind(this);
 
-    // Load the SDK asynchronously
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -88,7 +93,7 @@ handleLogout() {
 		{ this.state.connected&&
   			<div className="fbUserInfo">
   				<span className="facebook-user-name">{this.state.name}</span>
-  				<img src={this.state.imageUrl} />
+  				{/*<img src={this.state.imageUrl} />*/}
   				
   			</div>  			
   		}
